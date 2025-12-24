@@ -29,9 +29,10 @@ async def start_bot(token, bot_name):
         """
         print(f'{client.user} olarak giriş yapıldı.')
         try:
-            # Botun durumunu "Rahatsız Etmeyin" (Do Not Disturb) olarak ayarla
-            await client.change_presence(status=discord.Status.dnd, activity=None)
-            print(f'{client.user} durumu "Rahatsız Etmeyin" olarak ayarlandı.')
+            # Botun durumunu "Rahatsız Etmeyin" ve "Viltrum Network oynuyor" olarak ayarla
+            game = discord.Game(name="Viltrum Network")
+            await client.change_presence(status=discord.Status.dnd, activity=game)
+            print(f'{client.user} durumu "Viltrum Network oynuyor" olarak ayarlandı.')
         except Exception as e:
             print(f"Durum değiştirilirken bir hata oluştu: {e}")
 
